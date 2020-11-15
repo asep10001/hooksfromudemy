@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 const Search = () => {
-  const [term, setterm] = useState("");
+  const [term, setterm] = useState("your term here");
   const [results, setResults] = useState([]);
   useEffect(() => {
     const search = async () => {
@@ -17,16 +17,20 @@ const Search = () => {
       });
       setResults(data.query.search);
     };
-    const timeoutId = setTimeout(() => {
-      if (term) {
-        search();
-      }
-    }, 500);
 
-    return () => {
-      clearTimeout(timeoutId);
-    };
-  }, [term]);
+    if (term && !results.length) {
+      search();
+    } else {
+      const timeoutId = setTimeout(() => {
+        if (term) {
+          search();
+        }
+      }, 500);
+      return () => {
+        clearTimeout(timeoutId);
+      };
+    }
+  }, [term, results.length]);
 
   const renderedResults = results.map((results) => {
     return (
