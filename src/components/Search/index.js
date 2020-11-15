@@ -16,22 +16,26 @@ const Search = () => {
         },
       });
       setResults(data.query.search);
-      console.log(results[0]);
     };
-    search();
+    if (term) {
+      search();
+    }
   }, [term]);
 
   const renderedResults = results.map((results) => {
     return (
       <div key={results.pageid} className="item">
         <div className="right floated content">
-          <a 
-          href={`https://en.wikipedia.org?curid=${results.pageid}`}
-          className="ui button">Go</a>
+          <a
+            href={`https://en.wikipedia.org?curid=${results.pageid}`}
+            className="ui button"
+          >
+            Go
+          </a>
         </div>
         <div className="content">
           <div className="header">{results.title}</div>
-          <span dangerouslySetInnerHTML={{ __html: results.snippet }}/>
+          <span dangerouslySetInnerHTML={{ __html: results.snippet }} />
         </div>
       </div>
     );
