@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { Accordion, Search } from "./components";
 
-function App() {
+const items = [
+  {
+    title:'What is React?',
+    contents : 'React is a frontend JS framework'
+  },
+  {
+  
+    title: 'Why Use React?',
+    contents: 'React is a favorite JS libray among engineers'
+  },
+  {
+    title: 'How do you use react?',
+    contents: 'Use React by creating components'
+  }
+
+]
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Accordion items={items} />
+      <Search />
+    </>
   );
 }
 
