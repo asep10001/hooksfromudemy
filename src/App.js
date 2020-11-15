@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { Accordion, Search } from "./components";
+import { Accordion, Dropdown, Search } from "./components";
 
 const items = [
   {
@@ -19,11 +19,29 @@ const items = [
 
 ]
 
+
+const options = [
+  {
+    label : "Red",
+    value : 'red'
+  },
+  {
+    label : "Green",
+    value : 'green'
+  },
+  {
+    label : "Blue",
+    value : 'blue'
+  },
+
+]
+
 const App = () => {
   return (
     <>
       <Accordion items={items} />
       <Search />
+      <Dropdown options={options}/>
     </>
   );
 }
