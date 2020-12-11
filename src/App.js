@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
-import { Accordion, Dropdown, Search } from "./components";
+import { Accordion, Dropdown, Search, Translate } from "./components";
 
 const items = [
   {
@@ -49,6 +49,7 @@ const App = () => {
           options={options}
         />
       ) : null}
+      <Translate/>
     </>
   );
 };
