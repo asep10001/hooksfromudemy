@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import { Accordion, Dropdown, Search, Translate } from "./components";
 import Route from './components/Route'
+import Header from './components/Header'
 
 const items = [
   {
@@ -39,6 +40,7 @@ const App = () => {
   const [showDropdown, setShowDropdown] = useState(true);
   return (
     <>
+      <Header />
       <Route path="/">
         <Accordion items={items} />
       </Route>
