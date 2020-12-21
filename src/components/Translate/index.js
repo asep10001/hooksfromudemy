@@ -19,7 +19,11 @@ const options = [
     },
     {
         label: 'Indonesian',
-        value: 'ina'
+        value: 'id'
+    },
+    {
+        label: 'Sundanese',
+        value: 'su'
     }
 ]
 const Translate = () => {
