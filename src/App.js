@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./App.css";
 import { Accordion, Dropdown, Search, Translate } from "./components";
-import Route from './components/Route'
-import Header from './components/Header'
+import Route from "./components/Route";
+import Header from "./components/Header";
 
 const items = [
   {
@@ -34,7 +34,6 @@ const options = [
   },
 ];
 
-
 const App = () => {
   const [selected, setselected] = useState(options[0]);
   const [showDropdown, setShowDropdown] = useState(true);
@@ -47,9 +46,10 @@ const App = () => {
       <Route path="/list">
         <Search />
       </Route>
-      <Route path='/dropdown'>
+      <Route path="/dropdown">
         <button onClick={() => setShowDropdown(!showDropdown)}>
-          Toggle Dropdown</button>
+          Toggle Dropdown
+        </button>
         {showDropdown ? (
           <Dropdown
             selected={selected}
@@ -58,7 +58,7 @@ const App = () => {
           />
         ) : null}
       </Route>
-      <Route path='/translate'>
+      <Route path="/translate">
         <Translate />
       </Route>
     </>

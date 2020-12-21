@@ -1,7 +1,7 @@
-import Accordion  from "./Accordion";
-import Search  from "./Search";
+import Accordion from "./Accordion";
+import Search from "./Search";
 
-import Translate from "./Translate"
-import Dropdown from "./Dropdown"
+import Translate from "./Translate";
+import Dropdown from "./Dropdown";
 
-export {Accordion, Search, Dropdown, Translate};
+export { Accordion, Search, Dropdown, Translate };
