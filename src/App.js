@@ -32,16 +32,25 @@ const options = [
   },
 ];
 
-const App = () => {
-  const [selected, setselected] = useState(options[0]);
-  const [showDropdown, setShowDropdown] = useState(true);
-  return (
-    <>
-      <Accordion items={items} />
-      <Search />
+const showAccordion = () => {
+  if (window.location.pathname === '/') {
+    return <Accordion items={items} />
+  }
+}
+
+const showLists = () => {
+  if (window.location.pathname === '/list') {
+    return <Search />
+  }
+}
+
+const showDropdown1 = (showDropdown, setShowDropdown, selected, setselected) => {
+
+  if (window.location.pathname === '/dropdown') {
+    return <>
       <button onClick={() => setShowDropdown(!showDropdown)}>
         Toggle Dropdown
-      </button>
+  </button>
       {showDropdown ? (
         <Dropdown
           selected={selected}
@@ -49,7 +58,25 @@ const App = () => {
           options={options}
         />
       ) : null}
-      <Translate/>
+    </>
+  }
+}
+
+const showTranslate = () => {
+  if (window.location.pathname === '/translate') {
+    return <Translate />
+  }
+}
+
+const App = () => {
+  const [selected, setselected] = useState(options[0]);
+  const [showDropdown, setShowDropdown] = useState(true);
+  return (
+    <>
+      {showAccordion()}
+      {showLists()}
+      {showDropdown1(showDropdown, setShowDropdown, selected, setselected)}
+      {showTranslate()}
     </>
   );
 };
